@@ -1,0 +1,52 @@
+// Elementos básicos para utilización de una conexion POST
+// El ejemplo no utiliza el control de conexion
+// El ejemplo no gestiona la cadena de retorno de la operación realizada
+
+		HttpURLConnection conn = null;
+            try {
+                // Objeto url que recibe como parametro la cadena al webservice de Insert
+				// Ejemplo cadena = "http://w.x.y.z:8888/datos1/insertar_alumno.php"
+
+				// Objeto url que recibe como parametro la cadena al webservice de Insertar
+				url = new URL(cadena);
+
+				// Cast para manejar la conexión como un objeto HttpURLConnection
+                conn = (HttpURLConnection) url.openConnection();
+				
+				// Establecimiento de un tipo de conexión POST
+                conn.setRequestMethod("POST");
+				
+				// Propiedades de la conexión
+                conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+                conn.setRequestProperty("Accept","application/json");
+                conn.setDoOutput(true);
+                conn.setDoInput(true);
+
+				// Creación de Objetos JSON y carga de datos
+                JSONObject jsonn = new JSONObject();
+				// En caso de no utilizar AsyncTask, poner los valores directamente en lugar 
+				// de utilizar params
+                jsonn.put("nombre", params[0]);
+                jsenn.put("direccion", params[1]);
+
+                // Tambien puede usarse utilizando OutputStream
+                DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+                os.writeBytes(jsonn.toString());
+
+                os.flush();
+                os.close();
+
+                conn.disconnect();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } finally {
+                if (conn != null) {
+                    conn.disconnect();
+                }
+            }
+
+
+    

@@ -1,0 +1,26 @@
+1.- Configurar un entorno XAMMP
+	- Crear una BD de nombre: Datos
+	- Crear una tabla con la siguiente estructura:
+		Nombre: Alumnos
+			idalumno 	- int(10) - AI- PK
+			nombre		- varchar(100)
+			direccion	- varchar (100)
+	- Insertar datos en la tabla
+	- Verificar la operación del Script: 
+		http://localhost/datos1/obtener_alumnos.php
+	
+2.- Crear una nueva carpeta en htdocs:
+	- Descompactar los archivos PHP
+	
+3.- Instalar Postman y probar los siguientes Scripts
+	- Descargar desde: www.getpostman.com
+	- Probar los scripts utilizando Postman:
+		GET	| http://localhost/datos1/obtener_alumnos.php
+		GET | http://localhost/datos1/obtener_alumno_por_id.php
+		POPST	| http://localhost/datos1/insertar_alumno.php
+				{"nombre":"Alumno insertado","direccion":"Direccion insertada"}
+		POST	| http://localhost/datos1/borrar_alumno.php
+				{"idalumno":"1"}
+		POST	| http://localhost/datos1/actualizar_alumno.php
+				{"idalumno":"2","nombre":"Alumno actualizado","direccion":"Direccion actualizada"}
+		

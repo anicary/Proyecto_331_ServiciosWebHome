@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <item
+        android:id="@+id/app_bar_search"
+        android:contentDescription="Buscar"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="Buscar en lista"
+        android:tooltipText="Buscar en lista"
+        android:visible="true"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView">
+
+    </item>
+    <item
+        android:id="@+id/agregar"
+        android:enabled="true"
+        android:icon="@drawable/ic_add_circle_black_24dp"
+        android:iconTint="@color/cardview_light_background"
+        android:iconTintMode="add"
+        android:title="Agregar Alumno"
+        android:visible="true"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/sobre"
+        android:icon="@drawable/ic_info_outline_black_24dp"
+        android:title="Sobre la app" />
+    <item
+        android:id="@+id/buscar"
+        android:enabled="true"
+        android:icon="@drawable/ic_import_contacts_black_24dp"
+        android:iconTint="@color/cardview_light_background"
+        android:iconTintMode="add"
+        android:title="Buscar Alumno"
+        android:visible="true"
+        app:showAsAction="ifRoom|withText" />
+
+</menu>
